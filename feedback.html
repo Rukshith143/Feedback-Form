@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Feedback - Share Your Experience</title>
+    <link rel="stylesheet" href="feedback.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="feedback-container">
+        <!-- Background Elements -->
+        <div class="bg-decoration"></div>
+        <div class="bg-decoration-2"></div>
+        
+        <!-- Main Content -->
+        <div class="feedback-card">
+            <div class="feedback-header">
+                <div class="icon-wrapper">
+                    <svg class="feedback-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </div>
+                <h1 class="title">We Value Your Feedback</h1>
+                <p class="subtitle">Help us improve by sharing your experience</p>
+            </div>
+
+            <form class="feedback-form" id="feedbackForm">
+                <!-- Rating Section -->
+                <div class="form-group">
+                    <label class="form-label">Overall Experience</label>
+                    <div class="rating-container">
+                        <div class="stars" id="starRating">
+                            <span class="star" data-rating="1">★</span>
+                            <span class="star" data-rating="2">★</span>
+                            <span class="star" data-rating="3">★</span>
+                            <span class="star" data-rating="4">★</span>
+                            <span class="star" data-rating="5">★</span>
+                        </div>
+                        <span class="rating-text" id="ratingText">Rate your experience</span>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" value="">
+                </div>
+
+                <!-- Name Field -->
+                <div class="form-group">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name">
+                    <div class="error-message" id="nameError"></div>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com">
+                    <div class="error-message" id="emailError"></div>
+                </div>
+
+                <!-- Category Selection -->
+                <div class="form-group">
+                    <label for="category" class="form-label">Feedback Category</label>
+                    <select id="category" name="category" class="form-select">
+                        <option value="">Select a category</option>
+                        <option value="product">Product Quality</option>
+                        <option value="service">Customer Service</option>
+                        <option value="website">Website Experience</option>
+                        <option value="delivery">Delivery & Shipping</option>
+                        <option value="pricing">Pricing & Value</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div class="error-message" id="categoryError"></div>
+                </div>
+
+                <!-- Message Field -->
+                <div class="form-group">
+                    <label for="message" class="form-label">Your Feedback</label>
+                    <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Please share your detailed feedback here..."></textarea>
+                    <div class="error-message" id="messageError"></div>
+                </div>
+
+                <!-- Suggestions Field -->
+                <div class="form-group">
+                    <label for="suggestions" class="form-label">Suggestions for Improvement (Optional)</label>
+                    <textarea id="suggestions" name="suggestions" class="form-textarea" rows="3" placeholder="Any suggestions to help us serve you better?"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Submit Feedback</span>
+                    <div class="btn-loader"></div>
+                </button>
+            </form>
+
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                </div>
+                <h3>Thank You!</h3>
+                <p>Your feedback has been submitted successfully. We appreciate your time and input!</p>
+                <button class="reset-btn" id="resetBtn">Submit Another Feedback</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="feedback-footer">
+            <p>&copy; 2024 Customer Feedback Portal. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="feedback.js"></script>
+</body>
+</html>
